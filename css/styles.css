@@ -1,0 +1,231 @@
+html {
+    box-sizing: border-box;
+    background-color: var(--darkest-color);
+    color: var(--dark-color);
+    font-family: futura-pt, system-ui, Helvetica Neue, sans-serif, fira_sansregular;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --white-color: #fcfcfc;
+    --dark-color: rgb(31 32 48);
+    --beige-color: rgb(190, 251, 251);
+    --darkest-color: #0c0d14;
+}
+
+#wrapper {
+    border: solid 1px var(--dark-color);
+    max-width: 960px;
+	margin: auto;
+	background-color: var(--dark-color);
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+	border-width: 1px;
+	overflow: hidden;
+    box-shadow: 0px 0px 2px 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.header-container {
+    margin-left: 20px;
+}
+
+main {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 90%;               
+    background-color: lightgrey;
+    height: 1px;
+    margin: 10px;
+    align-self: center;
+}
+
+.text-box-light {
+    background-color: var(--beige-color);
+    border: 1px solid var(--dark-color);
+    border-radius: 10px;
+    margin:10px 20px;
+}
+
+.text-box-spacing {
+    margin: 0px 5px;
+    font-size: 1.1em;
+}
+
+.container1 {
+    display: flex;
+}
+
+button{
+    border-radius: 5px;
+    border:solid 2px var(--dark-color);
+    background-color: var(--beige-color);
+    color: var(--dark-color);
+    padding:8px;
+    margin: 0px 7px 0px 7px;
+    max-width: 130px;
+    font-weight: bold;
+    font-size: large;
+}
+
+button:hover{
+    background-color: #eef73e;
+}
+
+.no-hover{
+    pointer-events: none;
+}
+
+.disabled-button-style {
+  background-color: #ccc; /* Light grey background */
+  color: #666; /* Darker text color */
+  cursor: not-allowed; /* Change cursor to indicate non-interactivity */
+  opacity: 0.7; /* Slightly reduce opacity */
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.result-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#game-result{
+    flex:1;
+    max-width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.game-player-container{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid black; */
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.game-player-container li, ul{
+    list-style-type: none;
+    padding-left:0;
+}
+
+.game-player-dice{
+    flex: 3;
+    /* border: 1px solid red; */
+}
+
+.game-player-score{
+    flex: 2;
+    /* border: 1px solid blue; */
+}
+
+.dice-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-box{
+    flex:1;
+    max-width: 105px;
+}
+
+.dice-img{
+    width: 100px;
+    height: auto;
+    align-self: center;
+}
+
+@media screen and (max-width:770px) {
+    .card1.box .card-img{
+        max-height: 300px;
+    }
+}
+
+footer {
+    background-color: var(--dark-color); 
+    height: 50px;
+}
+
+.foot-ul {
+    margin:3px;
+    list-style-type: none;
+    list-style-image:none;
+    padding:0px; 
+    display:flex;
+    justify-content: space-between;
+}
+
+.foot-item {
+    display:block;
+    min-width:120px;    
+    text-align:center;
+    margin: 1px 2px;
+    padding: 1px 3px;
+}
+
+.foot-link {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.social-img {
+    height: 17px;
+    width: 17px;
+}
+
+@media screen and (max-width:700px) {
+    .nav-ul {
+        flex-direction: column;
+    }
+    .nav-li {
+        margin: 0px;
+    }
+    .foot-ul {
+        flex-direction: column;
+    }
+    footer {
+        height: auto;
+    }
+    .container1, .container2 {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+}
+

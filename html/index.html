@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Dice Game</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="../js/jquery3.7.js" defer="defer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer="defer"></script>
+    <script src="../js/scripts.js" defer="defer"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="header-container">
+                <h1>Project: Dice Game</h1>
+            </div>
+        </header>
+        <main>
+            <div class="text-box-light">
+                <div class="text-box-spacing">
+                    <p>
+                        <Strong>Instructions:</Strong> roll the dice three times to get a calculated score. Compete with the dealer's score. The score is calculated as follows:
+                    </p>
+                    <ul>
+                        <li>If a 1 is rolled with either dice, the score is 0</li>
+                        <li>If a pair is rolled, the score is added up and doubled</li>
+                        <li>Otherwise, the two dice are added up</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-box-light">
+                <div class="text-box-spacing">
+                    <div class="game-player-container">
+                        <div class="game-player-dice">
+                            <p>Your Dice:</p>
+                            <div class="dice-container">
+                                <div class="dice-box">
+                                    <img id="player-dice-1" class="dice-img" src="../images/6.svg" alt="Player-Dice-1">
+                                </div>
+                                <div class="dice-box">
+                                    <img id="player-dice-2" class="dice-img" src="../images/6.svg" alt="Player-Dice-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-player-score">
+                            <p>Your Scores:</p>
+                            <ul>
+                                <li>Roll 1: <span id="player-roll-1"></span></li>
+                                <li>Roll 2: <span id="player-roll-2"></span></li>
+                                <li>Roll 3: <span id="player-roll-3"></span></li>
+                                <li>Total: <span id="player-total"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="game-player-container">
+                        <div class="game-player-dice">
+                            <p>Dealer's Dice:</p>
+                            <div class="dice-container">
+                                <div class="dice-box">
+                                    <img id="dealer-dice-1" class="dice-img" src="../images/6.svg" alt="Dealer-Dice-1">
+                                </div>
+                                <div class="dice-box">
+                                    <img id="dealer-dice-2" class="dice-img" src="../images/6.svg" alt="Dealer-Dice-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-player-score">
+                            <p>Dealer's Scores:</p>
+                            <ul>
+                                <li>Roll 1: <span id="dealer-roll-1"></span></li>
+                                <li>Roll 2: <span id="dealer-roll-2"></span></li>
+                                <li>Roll 3: <span id="dealer-roll-3"></span></li>
+                                <li>Total: <span id="dealer-total"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="button-roll-dice">Roll Dice</button>
+                <button id="button-reset-game">Reset Game</button>
+            </div>
+            <div class="result-container">
+                <span id="game-result">Congratulations, you Win!</span>
+            </div>
+        </main>
+        <footer>
+            <ul class="foot-ul">
+                <li class="foot-item"><a class="foot-link" href="#"><img class="social-img" src="../images/twitter.svg" alt="Twitter">Twitter</a></li>
+                <li class="foot-item"><a class="foot-link" href="#"><img class="social-img" src="../images/facebook.svg" alt="Facebook">Facebook</a></li>
+                <li class="foot-item"><a class="foot-link" href="#"><img class="social-img" src="../images/instagram.svg" alt="Instagram">Instagram</a></li>
+                <li class="foot-item"><a class="foot-link" href="#">COMP2132 &copy;</a></li>
+                <li class="foot-item"><a class="foot-link" href="#">Arvid Yuen</a></li>
+                <li class="foot-item"><a class="foot-link" href="#">BCIT</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
