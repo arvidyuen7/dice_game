@@ -37,7 +37,7 @@ function executeTurn(player, dealer) {
 async function updateHtml(player, dealer, reset=false){
     if(reset==false){
         animateDice();
-        await sleep(800);
+        await sleep(930);
     }
     $('#player-dice-1').attr("src",`../images/${player.die[0]}.svg`);
     $('#player-dice-2').attr("src",`../images/${player.die[1]}.svg`);
@@ -106,7 +106,7 @@ async function showResult(player, dealer){
         // Show tied message
         $('#game-result').html("😐 It's a tie, try again 😐");
     }
-    await sleep(800);
+    await sleep(930);
     $('#game-result').show();
 }
 
