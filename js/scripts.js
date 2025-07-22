@@ -34,7 +34,11 @@ function executeTurn(player, dealer) {
 }
 
 // Update all fields in the HTML
-function updateHtml(player, dealer){
+async function updateHtml(player, dealer, reset=false){
+    if(reset==false){
+        animateDice();
+        await sleep(800);
+    }
     $('#player-dice-1').attr("src",`../images/${player.die[0]}.svg`);
     $('#player-dice-2').attr("src",`../images/${player.die[1]}.svg`);
     $('#dealer-dice-1').attr("src",`../images/${dealer.die[0]}.svg`);
@@ -62,8 +66,36 @@ function calculateScore(num1, num2) {
     return score;
 }
 
+// Function to animate the dice
+function animateDice(){
+    diceAnimationFrame = requestAnimationFrame(function(){
+        setTimeout(function(){
+            if(counter==12){
+                counter = 0;
+                return;
+            } else {
+                counter++;
+            }
+            currentImageString = '../images/'+dice1.roll()+'.svg';
+            $playerDice1.attr('src',currentImageString);
+            currentImageString = '../images/'+dice1.roll()+'.svg';
+            $playerDice2.attr('src',currentImageString);
+            currentImageString = '../images/'+dice1.roll()+'.svg';
+            $dealerDice1.attr('src',currentImageString);
+            currentImageString = '../images/'+dice1.roll()+'.svg';
+            $dealerDice2.attr('src',currentImageString);
+
+            diceAnimationFrame = requestAnimationFrame(animateDice);
+        },60)
+    })
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Function to show the game result
-function showResult(player, dealer){
+async function showResult(player, dealer){
     if(player.calculateTotalScore()>dealer.calculateTotalScore()){
         // Show winning message
         $('#game-result').html('🎉 Congratulations, you win! 🎉');
@@ -74,6 +106,7 @@ function showResult(player, dealer){
         // Show tied message
         $('#game-result').html("😐 It's a tie, try again 😐");
     }
+    await sleep(800);
     $('#game-result').show();
 }
 
@@ -86,7 +119,7 @@ function resetGame() {
     dealer.scores = [null,null,null];
     $('#button-roll-dice').prop('disabled',false).removeClass('disabled-button-style').removeClass('no-hover');
     $('#game-result').hide();
-    updateHtml(player,dealer);
+    updateHtml(player,dealer,true);
 }
 
 // Create Button action
@@ -112,6 +145,14 @@ $(document).ready(function(){
 let currentTurn = 0;
 let player = new Player();
 let dealer = new Player();
+let diceAnimationFrame;
+let currentImageString='';
+const $playerDice1 = $('#player-dice-1');
+const $playerDice2 = $('#player-dice-2');
+const $dealerDice1 = $('#dealer-dice-1');
+const $dealerDice2 = $('#dealer-dice-2');
+let counter = 0;
 resetGame();
 // Create a dice object
 const dice = new Dice();
+const dice1 = new Dice();
